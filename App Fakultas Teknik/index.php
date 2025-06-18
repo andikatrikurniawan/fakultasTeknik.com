@@ -21,7 +21,7 @@
 
     <div class="mb-2 mt-4" id="formArea"></div>
     <div class="mb-4">
-      <button class="btn btn-outline-primary" onclick="loadFormInsert()">+ Data Fakultas Teknik</button>
+      <button class="btn btn-outline-success" onclick="loadFormInsert()">+ Data Fakultas Teknik</button>
     </div>
     <div id="dataPegawai"></div>
   </div>
