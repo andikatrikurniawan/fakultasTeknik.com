@@ -21,6 +21,7 @@ $data = $koneksi->query("SELECT * FROM pegawai p
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Edit Data Pegawai</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body class="container mt-4">
   <div class="container-fluid bg-success py-2 text-center text-white w-100">
@@ -66,14 +67,12 @@ $data = $koneksi->query("SELECT * FROM pegawai p
     </div>
 
     <button class="btn btn-outline-info" type="submit">Update</button>
-    <a href="index.php" class="btn btn-outline-warning">Kembali</a>
+    <button type="button" class="btn btn-outline-warning" id="btnKembali">Kembali</button>
 </form>
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<!-- jQuery UI Datepicker (optional jika tetap ingin kalender input) -->
+          
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
   <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-
 <script>
 $('#formEdit').submit(function(e){
   e.preventDefault();
@@ -83,11 +82,18 @@ $('#formEdit').submit(function(e){
     data: $(this).serialize(),
     success: function(res){
         alert(res);
-        $('#formArea').slideUp();
+        $('#formArea').html('');
         $('#dataPegawai').hide().load('tampil_pegawai.php').fadeIn();
     }
   });
 });
+
+ // ✅ Fungsi untuk tombol "Kembali"
+  $('#btnKembali').click(function(){
+    $('#formArea').html('');
+    $('#dataPegawai').load('tampil_pegawai.php').fadeIn();
+  });
+
  $(function(){
     $('input[type="date"]').datepicker({
         dateFormat: "yy-mm-dd",

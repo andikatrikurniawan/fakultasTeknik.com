@@ -39,24 +39,38 @@
     </div>
 
     <button class="btn btn-outline-success" type="submit">Simpan</button>
-    <a href="index.php" class="btn btn-outline-secondary">Kembali</a><br><br>
+    <button type="button" class="btn btn-outline-secondary" id="btnKembali">Kembali</button>
+    <br><br>
 </form>
 
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  
 <script>
-$('#formTambah').submit(function(e){
-  e.preventDefault();
-  $.post('aksi_simpan.php', $(this).serialize(), function(res) {
-    alert(res);
-    $('#formArea').html('');
-    $('#dataPegawai').load('tampil_pegawai.php').fadeIn;
+  $('#formTambah').submit(function(e){
+    e.preventDefault();
+    $.post('aksi_simpan.php', $(this).serialize(), 
+    function(res) {
+      alert(res);
+      $('#formArea').html('');
+      $('#dataPegawai').load('tampil_pegawai.php').fadeIn();
+    });
   });
-});
-    $(function(){
+
+  // ✅ Fungsi untuk tombol "Kembali"
+  $('#btnKembali').click(function(){
+    $('#formArea').html('');
+    $('#dataPegawai').load('tampil_pegawai.php').fadeIn();
+  });
+
+  // ✅ Tanggal Lahir pakai DatePicker
+  $(function(){
     $('input[type="date"]').datepicker({
-        dateFormat: "yy-mm-dd",
-        changeMonth: true,
-        changeYear: true,
-        yearRange: "1960:2025"
+      dateFormat: "yy-mm-dd",
+      changeMonth: true,
+      changeYear: true,
+      yearRange: "1960:2025"
     });
-    });
+  });
 </script>
+

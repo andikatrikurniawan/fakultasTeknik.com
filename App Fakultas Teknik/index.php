@@ -25,7 +25,6 @@
     </div>
     <div id="dataPegawai"></div>
   </div>
-
   <script>
     function loadFormInsert() {
       $('#formArea').load('form_tambah.php');
@@ -35,22 +34,46 @@
       $('#dataPegawai').hide().load('tampil_pegawai.php').fadeIn();
     }
 
-    function hapusApotik(id) {
-      if (confirm("Yakin ingin menghapus?")) {
-        $.post('aksi_hapus.php', { id: id }, function(res) {
-          alert(res);
-          loadPegawai();
-        });
+     // ✅ AJAX untuk tombol Edit
+  function editPegawai(id) {
+    $.ajax({
+      url: 'form_edit.php',
+      type: 'GET',
+      data: { id: id },
+      success: function(res) {
+        $('#formArea').html(res); // tampilkan form edit di #formArea
+        $('html, body').animate({
+          scrollTop: $('#formArea').offset().top
+        }, 400); // scroll ke form
+      },
+      error: function() {
+        alert('Gagal memuat form edit.');
       }
-    }
-
-    function editApotik(id) {
-      $('#formArea').load('aksi_edit.php?id=' + id);
-    }
-
-    $(document).ready(function() {
-      loadPegawai();
     });
+  }
+
+  // ✅ AJAX untuk tombol Hapus
+  function hapusPegawai(id) {
+    if (confirm('Yakin ingin menghapus data ini?')) {
+      $.ajax({
+        url: 'aksi_hapus.php',
+        type: 'POST',
+        data: { id: id },
+        success: function(res) {
+          alert(res);         // tampilkan alert respons
+          loadPegawai();      // reload data pegawai
+        },
+        error: function() {
+          alert('Gagal menghapus data.');
+        }
+      });
+    }
+  }
+
+  // ✅ Load data pertama kali
+  $(document).ready(function() {
+    loadPegawai();
+  });
   </script>
 
 </body>
