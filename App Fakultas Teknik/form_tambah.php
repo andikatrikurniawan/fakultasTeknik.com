@@ -38,8 +38,8 @@
       <input type="number" name="tahun" class="form-control" required>
     </div>
 
-    <button class="btn btn-outline-success" type="submit">Simpan</button>
-    <button type="button" class="btn btn-outline-secondary" id="btnKembali">Kembali</button>
+    <button class="btn btn-outline-success" type="submit"><i class="fas fa-save"></i>  Simpan</button>
+    <button type="button" class="btn btn-outline-secondary" id="btnKembali"><i class="fas fa-arrow-left"></i>  Kembali</button>
     <br><br>
 </form>
 

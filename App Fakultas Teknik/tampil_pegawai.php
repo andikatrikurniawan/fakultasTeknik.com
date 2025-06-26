@@ -37,8 +37,8 @@ $query = $koneksi->query("SELECT p.id_pegawai, p.nama, p.Tggl_Lahir, j.nama_jaba
           <td><?= $row['institusi'] ?></td>
           <td><?= $row['tahun_lulus'] ?></td>
           <td>
-            <button class="btn btn-outline-warning btn-sm" onclick="editPegawai(<?= $row['id_pegawai'] ?>)">Edit</button>
-            <button class="btn btn-outline-danger btn-sm" onclick="hapusPegawai(<?= $row['id_pegawai'] ?>)">Hapus</button>
+            <button class="btn btn-outline-warning btn-sm" onclick="editPegawai(<?= $row['id_pegawai'] ?>)"><i class="fas fa-edit"></i>  Edit</button>
+            <button class="btn btn-outline-danger btn-sm" onclick="hapusPegawai(<?= $row['id_pegawai'] ?>)"><i class="fas fa-trash"></i>  Hapus</button>
           </td>
         </tr>
       <?php endwhile ?>

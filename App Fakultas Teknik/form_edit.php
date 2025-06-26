@@ -66,8 +66,8 @@ $data = $koneksi->query("SELECT * FROM pegawai p
       <input type="number" name="tahun" class="form-control" value="<?= $data['tahun_lulus'] ?>" required>
     </div>
 
-    <button class="btn btn-outline-info" type="submit">Update</button>
-    <button type="button" class="btn btn-outline-warning" id="btnKembali">Kembali</button>
+    <button class="btn btn-outline-info" type="submit"><i class="fas fa-edit"></i>  Update</button>
+    <button type="button" class="btn btn-outline-warning" id="btnKembali"><i class="fas fa-arrow-left"></i>  Kembali</button>
 </form>
 
           

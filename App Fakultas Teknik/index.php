@@ -8,6 +8,8 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 
   <!-- Optional: jQuery UI untuk datepicker -->
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
@@ -21,7 +23,7 @@
 
     <div class="mb-2 mt-4" id="formArea"></div>
     <div class="mb-4">
-      <button class="btn btn-outline-success" onclick="loadFormInsert()">+ Data Fakultas Teknik</button>
+      <button class="btn btn-outline-success" onclick="loadFormInsert()"><i class="fas fa-plus"></i>  Data Fakultas Teknik</button>
     </div>
     <div id="dataPegawai"></div>
   </div>
