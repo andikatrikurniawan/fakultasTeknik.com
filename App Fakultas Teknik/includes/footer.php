@@ -9,6 +9,7 @@
                 </div>
                 <div class="col-md-6 text-md-end">
                     <p class="mb-0">&copy; <?= date('Y') ?> Faculty Of Engineering University</p>
+                    <p class="mb-0"><i class="fa-solid fa-square-check"></i>  INI HAK CIPTA ANDIKA TRI KURNIAWAN</p>
                 </div>
             </div>
         </div>
