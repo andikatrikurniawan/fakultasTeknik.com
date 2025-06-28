@@ -24,7 +24,7 @@ $data = $koneksi->query("SELECT * FROM pegawai p
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body class="container mt-4">
-  <div class="container-fluid bg-success py-2 text-center text-white w-100">
+  <div class="container-left bg-success py-2 text-left text-white w-100">
     <h2 class="mb-1">Edit Data Kepegawaian Falkultas Teknik</h2>
   </div><br>
 <form id="formEdit">
