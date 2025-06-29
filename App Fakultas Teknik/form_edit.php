@@ -82,8 +82,8 @@ $('#formEdit').submit(function(e){
     data: $(this).serialize(),
     success: function(res){
         alert(res);
-        $('#formArea').html('');
-        $('#dataPegawai').hide().load('tampil_pegawai.php').fadeIn();
+        $('#formArea').slideUp();
+        $('#dataPegawai').load('index.php?load=data').fadeIn();
     }
   });
 });
@@ -91,10 +91,10 @@ $('#formEdit').submit(function(e){
  // ✅ Fungsi untuk tombol "Kembali"
   $('#btnKembali').click(function(){
     $('#formArea').html('');
-    $('#dataPegawai').load('tampil_pegawai.php').fadeIn();
+    $('#dataPegawai').load('index.php?load=data').fadeIn();
   });
 
- $(function(){
+  $(function(){
     $('input[type="date"]').datepicker({
         dateFormat: "yy-mm-dd",
         changeMonth: true,

@@ -1,15 +1,17 @@
 </main>
 
-    <footer class="bg-info text-white py-4 mt-4 absolute w-100">
+    <footer class="bg-info text-black py-4 mt-4 absolute w-100">
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <h5><i class="fas fa-laptop-code me-2"></i>Fakultas Teknik</h5>
-                    <p class="mb-0">Management system for Fakultas equipment and assets</p>
+                    <h5><i class="fas fa-laptop-code me-2"></i> Faculty Of Engineering</h5>
+                    <p class="mb-0">Management system for Faculty Of Engineering</p>
                 </div>
                 <div class="col-md-6 text-md-end">
                     <p class="mb-0">&copy; <?= date('Y') ?> Faculty Of Engineering University</p>
-                    <p class="mb-0"><i class="fa-solid fa-square-check"></i>  INI HAK CIPTA ANDIKA TRI KURNIAWAN</p>
+                    <p class="mb-0"><i class="fa-solid fa-square-check"></i> HAK CIPTA ANDIKA TRI KURNIAWAN
+                    <a href="#top" class="text-green small"><i class="fas fa-arrow-up me-1"></i>Back to top</a>
+                    </p>
                 </div>
             </div>
         </div>

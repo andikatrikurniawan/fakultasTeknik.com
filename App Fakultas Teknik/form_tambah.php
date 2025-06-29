@@ -49,18 +49,22 @@
 <script>
   $('#formTambah').submit(function(e){
     e.preventDefault();
-    $.post('aksi_simpan.php', $(this).serialize(), 
-    function(res) {
-      alert(res);
-      $('#formArea').html('');
-      $('#dataPegawai').load('tampil_pegawai.php').fadeIn();
-    });
+    $.ajax({
+    type: 'POST',
+    url: 'aksi_simpan.php',
+    data: $(this).serialize(),
+    success: function(res){
+        alert(res);
+        $('#formArea').html('');
+        $('#dataPegawai').hide().load('index.php?load=data').fadeIn();
+    }
+  });
   });
 
   // ✅ Fungsi untuk tombol "Kembali"
   $('#btnKembali').click(function(){
     $('#formArea').html('');
-    $('#dataPegawai').load('tampil_pegawai.php').fadeIn();
+    $('#dataPegawai').hide().load('index.php?load=data').fadeIn();
   });
 
   // ✅ Tanggal Lahir pakai DatePicker
